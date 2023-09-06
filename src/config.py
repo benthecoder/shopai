@@ -1,0 +1,6 @@
+CLASS_NAME = "User"
+EMBEDDINGS_MODEL = "text-embedding-ada-002"
+# GPT_MODEL = "gpt-3.5-turbo-0613"
+GPT_MODEL = "gpt-3.5-turbo-16k-0613"
+VECTORIZER = "text2vec-openai"
+UUID = "12345678-e64f-5d94-90db-c8cfa3fc1234"
