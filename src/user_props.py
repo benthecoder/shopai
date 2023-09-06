@@ -24,7 +24,7 @@ def create_client():
     auth_config = weaviate.AuthApiKey(api_key=st.secrets["WEAVIATE_API_KEY"])
 
     client = weaviate.Client(
-        url="https://weaviate-e5ulknvl.weaviate.network",
+        url="https://shopai-i90k6enj.weaviate.network",
         auth_client_secret=auth_config,
         additional_headers={
             "X-OpenAI-Api-Key": st.secrets["OPENAI_API_KEY"],
