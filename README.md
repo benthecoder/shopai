@@ -88,3 +88,7 @@ Weaviate
 OpenAI
 
 - return multiple objects in function calling [forum](https://community.openai.com/t/function-calling-return-multiple-objects/282989)
+
+Git
+
+- do `git rm -r --cached .` to gitignore commited file

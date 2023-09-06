@@ -12,7 +12,6 @@ def get_env(API_KEY):
     if os.getenv(API_KEY) is not None:
         return os.getenv(API_KEY)
     else:
-        return st.secrets[API_KEY]
         raise Exception(f"{API_KEY} not found")
 
 
