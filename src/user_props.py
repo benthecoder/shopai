@@ -1,10 +1,10 @@
 import os
-from pprint import pprint
 
 import weaviate
 from dotenv import load_dotenv
 
 from config import CLASS_NAME, VECTORIZER, UUID
+import streamlit as st
 
 
 def get_env(API_KEY):
@@ -12,21 +12,22 @@ def get_env(API_KEY):
     if os.getenv(API_KEY) is not None:
         return os.getenv(API_KEY)
     else:
+        return st.secrets[API_KEY]
         raise Exception(f"{API_KEY} not found")
 
 
 def create_client():
     load_dotenv()
-    WEAVIATE_API_KEY = get_env("WEAVIATE_API_KEY")
-    OPENAI_API_KEY = get_env("OPENAI_API_KEY")
+    # WEAVIATE_API_KEY = get_env("WEAVIATE_API_KEY")
+    # OPENAI_API_KEY = get_env("OPENAI_API_KEY")
 
-    auth_config = weaviate.AuthApiKey(api_key=WEAVIATE_API_KEY)
+    auth_config = weaviate.AuthApiKey(api_key=st.secrets["WEAVIATE_API_KEY"])
 
     client = weaviate.Client(
         url="https://weaviate-e5ulknvl.weaviate.network",
         auth_client_secret=auth_config,
         additional_headers={
-            "X-OpenAI-Api-Key": OPENAI_API_KEY,
+            "X-OpenAI-Api-Key": st.secrets["OPENAI_API_KEY"],
         },
     )
 

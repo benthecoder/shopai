@@ -1,6 +1,6 @@
-# Shopper Profile with LLMs
+# User Profile with LLMs
 
-Goal: The goal of this project is to extract valuable insights about a shopper on a e-commerce platform.
+Goal: The goal of this project is to extract valuable insights about a shopper based on chat history
 
 Stack:
 
@@ -22,6 +22,8 @@ The insights could be the following attributes:
 8. **Payment Preferences**: Insights into users' preferred payment methods and digital wallets.
 9. **Product Lifecycles**: Expectations regarding product durability and lifespan.
 
+Look at this [notebook](notebooks/sample_convos.ipynb) for example responses
+
 ## Project Flow
 
 1. Users engage in chat sessions with a bot.
@@ -33,6 +35,32 @@ The insights could be the following attributes:
 7. Extracted insights are stored in Weaviate, associated with the user's ID, creating a structured knowledge graph.
 
 This project facilitates understanding and utilizing valuable shopper information from chat interactions on the e-commerce platform.
+
+## Setup
+
+create env with conda
+
+```bash
+conda create -n shopai python=3.8
+```
+
+activate env
+
+```bash
+conda activate shopai
+```
+
+install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run
+
+```bash
+streamlit run src/main.py
+```
 
 ## TODO
 
@@ -48,7 +76,7 @@ This project facilitates understanding and utilizing valuable shopper informatio
   - [x] on each session end, load in property to db
 - [x] improve prompt
   - [x] have it create new property
-  - [ ] have it create properties that are related to user.
+  - [x] have it create properties that are related to user.
 
 ## References
 
